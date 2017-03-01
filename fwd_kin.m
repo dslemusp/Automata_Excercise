@@ -59,10 +59,10 @@ point_i = zeros(3,1);
 Rot_i = diag(ones(1,3));
 point_0 = zeros(3,1);
 for i = 1 : length(theta)
-    
-    point_i = point_0 + Rot_i*p_i{i} 
+    point_i = point_0 + Rot_i*p_i{i};
     Rot_i   = Rot_i*R_i{i}';
-    plot3([point_0(1) point_i(1)],[point_0(2) point_i(2)],[point_0(3) point_i(3)],'Marker','o','LineWidth',2)
+    plot3([point_0(1) point_i(1)],[point_0(2) point_i(2)],[point_0(3) point_i(3)],...
+           'Marker','o','LineWidth',5,'MarkerSize',15)
     point_0 = point_i;
     hold on
 end
